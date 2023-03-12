@@ -1,0 +1,16 @@
+<div class="timer" id="timer">
+    <div class="child" id="wpm">{{wpm}}</div>
+    <div class="child" id="error">{{error_count}}</div>
+</div>
+<div class="passage">
+    <pre class="tab"><span class="span-child" *ngFor="let char of excerpt_array; let idx = index" [ngClass]="getClass(idx)">{{char}}<br *ngIf="line_change[idx]"></span></pre>
+</div>
+<div *ngIf="custom_layout">
+<textarea class="custom_input" autofocus [(ngModel)]="custom_text"></textarea>
+</div>
+<div>
+    <button class="submit_button" (mouseup)="newCodeSnippet()">CODE</button>
+    <!-- <button class="submit_button" (mouseup)="sameCodeSnippet()">REPEAT</button> -->
+    <button class="submit_button" (mouseup)="customCodeSnippet()">CUSTOM</button>
+    <button class="submit_button" *ngIf="custom_layout" (mouseup)="submitCustomSnippet()">SUBMIT</button>
+</div>
