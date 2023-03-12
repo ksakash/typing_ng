@@ -165,7 +165,7 @@ export class TypingComponent {
         }
         var avg_length = Math.floor(total_length/words.length);
         var words_ = [];
-        var limit = 20;
+        var limit = 10;
         var line_limit = 40;
         let count = 1;
 
